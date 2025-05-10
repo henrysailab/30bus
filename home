@@ -45,7 +45,7 @@ export default function LandingPage() {
       >
         {/* Logo */}
         <motion.img
-          src="/30 BUS Logo.png"
+          src="30 BUS Logo.png"
           alt="30 BUS Challenge Logo"
           className="w-32 h-32 mb-6"
           initial={{ scale: 0 }}
