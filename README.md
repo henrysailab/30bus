@@ -7,7 +7,7 @@ Welcome to the **30 Day Build, Use, Sell (B.U.S.) Challenge** landing page proje
 ## 🚀 Project Overview
 
 - **Name:** 30 Day Build, Use, Sell Challenge
-- **Tagline:** *Hope on the 30 BUS To The Destination of Your Choice*  
+- **Tagline:** *Hop on the 30 BUS To The Destination of Your Choice*  
 - **Objective:** Demonstrate what’s possible with ambition and AI in just 30 days. Each day features a new AI tool that you can build, use, and sell.
 - **Tech Stack:** React, Tailwind CSS (via utility classes), Framer Motion, Lucide React icons
 
