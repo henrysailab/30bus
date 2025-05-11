@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>30 BUS Challenge</title>
+  <style>
+    :root {
+      --gold: #D4AF37;
+      --teal: #008080;
+      --whatsapp: #25D366;
+    }
+    body {
+      margin: 0;
+      font-family: system-ui, sans-serif;
+      color: var(--text-color);
+      background: var(--bg-hero);
+      transition: background 0.5s, color 0.5s;
+      overflow-x: hidden;
+    }
+    /* Theme variables */
+    html[data-theme='dark'] {
+      --bg-hero: linear-gradient(135deg, #111827 0%, #1F2937 100%);
+      --section-bg: #1f2937;
+      --text-color: #f3f4f6;
+      --card-bg: #1f2937;
+      --card-text: #e5e7eb;
+    }
+    html[data-theme='light'] {
+      --bg-hero: linear-gradient(135deg, var(--teal) 0%, var(--gold) 100%);
+      --section-bg: #f9fafb;
+      --text-color: #1f1f1f;
+      --card-bg: #ffffff;
+      --card-text: #4b5563;
+    }
+
+    /* Utility & layout */
+    .hero-section {
+      min-height: 100vh;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      text-align: center; padding: 1rem;
+    }
+    .section {
+      padding: 5rem 1rem;
+      background: var(--section-bg);
+      text-align: center;
+    }
+
+    /* Fade-in on scroll */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Logo spin */
+    #logo {
+      width: 8rem; height: 8rem; margin-bottom: 1.5rem;
+      opacity: 0;
+      animation: logo-spin 1s ease-out forwards;
+    }
+    @keyframes logo-spin {
+      to { opacity: 1; transform: scale(1) rotate(360deg); }
+      from { opacity: 0; transform: scale(0) rotate(0deg); }
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-block;
+      padding: 0.75rem 2rem;
+      border-radius: 9999px;
+      font-weight: 600;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      text-decoration: none;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .btn:hover { transform: scale(1.05); }
+    .btn-primary { background: #fff; color: var(--teal); }
+    .btn-gold    { background: var(--gold); color: #fff; }
+    .btn-whatsapp{ background: var(--whatsapp); color: #fff; }
+    .btn-tally   { background: transparent; border: 2px solid var(--teal); color: var(--teal); }
+    .btn-referral {
+      display: inline-block;
+      background: #f3f4f6; color: var(--teal);
+      padding: 0.75rem 1.5rem; border-radius:9999px;
+      box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+      transition: transform 0.2s ease;
+    }
+    .btn-referral:hover { transform: scale(1.02); }
+
+    /* Dark-mode toggle */
+    #theme-toggle {
+      position: fixed; top: 1rem; right: 1rem;
+      background: rgba(255,255,255,0.8); border: none;
+      padding: 0.5rem; border-radius: 50%;
+      cursor: pointer; z-index: 100;
+      transition: background 0.3s;
+    }
+    #theme-toggle:hover { background: rgba(255,255,255,1); }
+    #theme-toggle svg { display: block; }
+  </style>
+</head>
+<body>
+
+  <!-- Dark Mode Toggle -->
+  <button id="theme-toggle" aria-label="Toggle theme">
+    <!-- Sun icon shown in dark mode -->
+    <svg id="icon-sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="5"/>
+      <line x1="12" y1="1" x2="12" y2="3"/>
+      <line x1="12" y1="21" x2="12" y2="23"/>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+      <line x1="1" y1="12" x2="3" y2="12"/>
+      <line x1="21" y1="12" x2="23" y2="12"/>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+    </svg>
+    <!-- Moon icon shown in light mode -->
+    <svg id="icon-moon" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+         style="display:none">
+      <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
+    </svg>
+  </button>
+
+  <!-- Hero -->
+  <section class="hero-section">
+    <img id="logo" src="30 BUS Logo.png" alt="30 BUS Challenge Logo" />
+    <div class="fade-in" style="transition-delay: 0.5s;">
+      <h1 style="font-size: 3rem; margin: 0.5rem 0;">30 Day Build, Use, Sell Challenge</h1>
+      <p style="font-size: 1.25rem; margin-bottom:1.5rem;">Hop on the 30 BUS To The Destination of Your Choice</p>
+      <a href="#tool-of-day" class="btn btn-primary">Discover Tool of the Day</a>
+    </div>
+  </section>
+
+  <!-- Tool of the Day -->
+  <section id="tool-of-day" class="section fade-in">
+    <h2 style="font-size:2.5rem; color: var(--teal); margin-bottom:1rem;">Tool of the Day</h2>
+    <div style="max-width:28rem; margin:0 auto; background:var(--card-bg); padding:2rem; border-radius:1.5rem; box-shadow:0 10px 20px rgba(0,0,0,0.1); transition:transform .2s;">
+      <h3 style="font-size:1.75rem; margin-bottom:0.75rem;">[Insert Tool Name]</h3>
+      <p style="margin-bottom:1rem; color: var(--card-text);">Brief description of today’s featured AI tool. Explain how it helps accelerate your workflow.</p>
+      <a href="[Tool Link]" style="font-weight:500; text-decoration:underline; color:var(--teal);" class="fade-in">Learn More →</a>
+    </div>
+  </section>
+
+  <!-- Free 30-Day Bonus -->
+  <section class="section fade-in">
+    <h2 style="font-size:2.5rem; color: var(--gold); margin-bottom:1rem;">Free 30-Day Bonus: ClickDone</h2>
+    <p style="margin-bottom:1.5rem; color: var(--text-color);">Get 30 days of free access to ClickDone, our AI-powered productivity suite for task automation.</p>
+    <a href="[ClickDone Link]" class="btn btn-gold">Claim Your Free Access</a>
+  </section>
+
+  <!-- WhatsApp & Tally -->
+  <section class="section fade-in">
+    <a href="https://wa.me/1234567890" class="btn btn-whatsapp" style="margin-right:1rem;">Chat on WhatsApp</a>
+    <a href="[Tally Form Link]" class="btn btn-tally">Fill the Tally Form</a>
+  </section>
+
+  <!-- Referral -->
+  <section class="section fade-in">
+    <h2 style="font-size:2rem; margin-bottom:0.5rem;">Referral Link</h2>
+    <p style="margin-bottom:1rem; color: var(--card-text);">Share the love and earn rewards! Use or share your unique referral link below.</p>
+    <a href="[Your Referral Link]" class="btn-referral">[Your Referral Link]</a>
+  </section>
+
+
+  <script>
+    // Theme toggle
+    const toggleBtn = document.getElementById('theme-toggle');
+    const sunIcon = document.getElementById('icon-sun');
+    const moonIcon = document.getElementById('icon-moon');
+    toggleBtn.addEventListener('click', () => {
+      const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', theme);
+      sunIcon.style.display = theme === 'dark' ? 'block' : 'none';
+      moonIcon.style.display = theme === 'light' ? 'block' : 'none';
+    });
+
+    // Scroll-fade observer
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.2 });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
