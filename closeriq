@@ -1,234 +1,91 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CloserIQ - AI Prospecting & Call Reporting</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --navy: #1a2a3a;
-      --teal: #1abc9c;
-      --white: #ffffff;
-      --gray-light: #f5f7fa;
-      --gray-dark: #707b8a;
-    }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Inter', sans-serif; color: var(--navy); line-height: 1.6; }
-    a { text-decoration: none; }
-    .btn {
-      display: inline-block;
-      padding: 0.75rem 1.5rem;
-      margin: 0.5rem 0;
-      border-radius: 4px;
-      font-weight: 600;
-      transition: all 0.3s ease;
-    }
-    .btn-primary {
-      background: var(--teal);
-      color: var(--white);
-    }
-    .btn-primary:hover { opacity: 0.9; }
-    .btn-secondary {
-      background: transparent;
-      border: 2px solid var(--teal);
-      color: var(--teal);
-    }
-    .btn-secondary:hover {
-      background: var(--teal);
-      color: var(--white);
-    }
-    header, section, footer { width: 100%; }
-    header {
-      background: linear-gradient(135deg, var(--navy), var(--teal));
-      color: var(--white);
-      text-align: center;
-      padding: 6rem 1rem;
-    }
-    header h1 { font-size: 3rem; margin-bottom: 1rem; font-weight: 700; }
-    header p { font-size: 1.25rem; max-width: 700px; margin: 0 auto 2rem; }
-
-    .container { max-width: 1100px; margin: 0 auto; padding: 4rem 1rem; }
-    .features, .benefits {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-      margin-bottom: 2rem;
-    }
-    .features .item, .benefits .item {
-      background: var(--white);
-      border: 1px solid var(--gray-light);
-      padding: 1.5rem;
-      border-radius: 8px;
-      text-align: center;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-    }
-    .features .item h3, .benefits .item h3 { margin-bottom: 1rem; color: var(--navy); }
-
-    #pricing .pricing-cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 2rem;
-    }
-    .plan {
-      background: var(--white);
-      border: 1px solid var(--gray-light);
-      border-radius: 8px;
-      padding: 2rem;
-      text-align: center;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-    .plan h3 { font-size: 1.5rem; margin-bottom: 1rem; color: var(--navy); }
-    .plan .price { font-size: 2.5rem; margin: 1rem 0; color: var(--teal); }
-    .plan ul { list-style: none; margin-bottom: 1.5rem; }
-    .plan li { margin: 0.5rem 0; }
-
-    #testimonials .testimonial-cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-    }
-    .testimonial {
-      background: var(--white);
-      border: 1px solid var(--gray-light);
-      border-radius: 8px;
-      padding: 1.5rem;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-      font-style: italic;
-    }
-    .testimonial p { margin-bottom: 1rem; color: var(--gray-dark); }
-    .testimonial .author { text-align: right; font-weight: 600; color: var(--navy); }
-
-    #demo { background: var(--gray-light); text-align: center; padding: 4rem 1rem; }
-    #demo iframe { width: 100%; max-width: 800px; height: 450px; border: none; border-radius: 8px; }
-
-    footer {
-      background: var(--navy);
-      color: var(--white);
-      text-align: center;
-      padding: 2rem 1rem;
-    }
-    footer p { margin-bottom: 0.5rem; }
-    footer a { color: var(--teal); }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CloserIQ Copilot | Your AI Edge For Presale Success</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header>
-    <h1>Close At AI Speed: AI Prospecting & Call Reporting in Seconds</h1>
-    <p>Automatically scrape company context, enrich LinkedIn profiles, and generate call summaries—so your reps spend time closing, not researching.</p>
-    <a href="/signup" class="btn btn-primary">Start Your Free 14-Day Trial</a>
-    <a href="#demo" class="btn btn-secondary">See It in Action → Demo Video</a>
+  <header class="hero">
+    <nav class="nav">
+      <a href="/" class="logo">CloserIQ Copilot</a>
+      <a href="#pricing" class="btn btn-outline">Pricing</a>
+    </nav>
+    <div class="hero-content">
+      <h1>Close At AI Speed</h1>
+      <p class="subhead">
+        Automatically scrape company context, enrich LinkedIn profiles,<br>
+        and generate call summaries—so your reps spend time closing, not researching.
+      </p>
+      <div class="cta-group">
+        <a href="#" class="btn btn-primary">Start Your Free 14-Day Trial</a>
+        <a href="#demo" class="btn btn-secondary">See It in Action →</a>
+      </div>
+    </div>
   </header>
 
-  <section class="container features">
-    <div class="item">
-      <h3>AI Website Scraper</h3>
-      <p>Instantly gather company data—About, Team, Services, and Latest News with one click.</p>
-    </div>
-    <div class="item">
-      <h3>LinkedIn Enrichment</h3>
-      <p>Auto-pull prospect role, tenure, skills, and recent activity to tailor your pitch.</p>
-    </div>
-    <div class="item">
-      <h3>Call Summary Reports</h3>
-      <p>Generate bullet-pointed summaries with sentiment analysis and next-step action items.</p>
-    </div>
-    <div class="item">
-      <h3>CRM & Email Integrations</h3>
-      <p>One-click push to HubSpot, Salesforce, Outreach.io, or Gmail—keep your pipeline updated.</p>
-    </div>
+  <section id="features" class="section">
+    <h2>Why CloserIQ Copilot?</h2>
+    <ul class="features-list">
+      <li><strong>🔍 Intelligent Scraping</strong> Pulls up-to-date company insights & org charts.</li>
+      <li><strong>🔗 LinkedIn Enrichment</strong> Auto-populate prospect profiles with social & role data.</li>
+      <li><strong>📝 Call Reporting</strong> Generates concise, actionable presales summaries.</li>
+      <li><strong>⚡ Instant Export</strong> One-click CSV/PDF download for your CRM.</li>
+    </ul>
   </section>
 
-  <section class="container benefits">
-    <div class="item">
-      <h3>Save 4h+/week</h3>
-      <p>Free up reps’ time so they can focus on closing deals instead of researching.</p>
-    </div>
-    <div class="item">
-      <h3>Boost Win Rates</h3>
-      <p>Data-driven insights lead to more relevant conversations and higher conversion.</p>
-    </div>
-    <div class="item">
-      <h3>Seamless Workflow</h3>
-      <p>No context-switching—manage research, reporting, and pipeline all in one place.</p>
-    </div>
-    <div class="item">
-      <h3>Enterprise Security</h3>
-      <p>SOC 2 compliant, encrypted storage, and SSO options keep your data safe.</p>
-    </div>
-  </section>
-
-  <section id="pricing" class="container">
-    <h2 style="text-align:center; margin-bottom:2rem;">Pricing Plans</h2>
-    <div class="pricing-cards">
-      <div class="plan">
+  <section id="pricing" class="section bg-light">
+    <h2>Pricing Tiers</h2>
+    <div class="pricing-grid">
+      <div class="card">
         <h3>Starter</h3>
-        <p class="price">$79<small>/user/mo</small></p>
+        <p class="price">$0/mo</p>
         <ul>
-          <li>200 company scrapes</li>
-          <li>20 call reports</li>
-          <li>Standard email support</li>
+          <li>50 company scrapes</li>
+          <li>50 LinkedIn enrichments</li>
+          <li>5 call reports</li>
         </ul>
-        <a href="/signup" class="btn btn-primary">Get Started</a>
+        <a href="#" class="btn btn-outline">Get Started</a>
       </div>
-      <div class="plan">
-        <h3>Growth</h3>
-        <p class="price">$149<small>/user/mo</small></p>
+      <div class="card featured">
+        <h3>Pro</h3>
+        <p class="price">$49/mo</p>
         <ul>
-          <li>1,000 company scrapes</li>
+          <li>Unlimited scrapes & enrichments</li>
           <li>100 call reports</li>
-          <li>CRM & API integrations</li>
+          <li>CSV & PDF exports</li>
+          <li>Email & chat support</li>
+        </ul>
+        <a href="#" class="btn btn-primary">Start 14-Day Trial</a>
+      </div>
+      <div class="card">
+        <h3>Enterprise</h3>
+        <p class="price">Contact Us</p>
+        <ul>
+          <li>Custom limits & SLAs</li>
+          <li>Dedicated onboarding</li>
+          <li>API access</li>
           <li>Priority support</li>
         </ul>
-        <a href="/signup" class="btn btn-primary">Start Trial</a>
-      </div>
-      <div class="plan">
-        <h3>Scale</h3>
-        <p class="price">$299<small>/user/mo</small></p>
-        <ul>
-          <li>Unlimited scrapes & reports</li>
-          <li>Dedicated account manager</li>
-          <li>Custom integrations & SLAs</li>
-        </ul>
-        <a href="/contact-sales" class="btn btn-secondary">Contact Sales</a>
-      </div>
-    </div>
-    <p style="text-align:center; margin-top:1rem; color: var(--gray-dark);">14-day free trial • 15% off annual billing • Overage pricing available</p>
-  </section>
-
-  <section id="testimonials" class="container">
-    <h2 style="text-align:center; margin-bottom:2rem;">What Our Customers Say</h2>
-    <div class="testimonial-cards">
-      <div class="testimonial">
-        <p>“CloserIQ transformed how our team approaches outreach. We cut research time in half and saw a 25% increase in booked demos within the first month.”</p>
-        <div class="author">– Sarah K., Sales Director</div>
-      </div>
-      <div class="testimonial">
-        <p>“The AI-generated call summaries are spot-on. We close more deals because we never miss an action item or follow-up detail.”</p>
-        <div class="author">– James L., Account Executive</div>
-      </div>
-      <div class="testimonial">
-        <p>“Integration with Salesforce was seamless. Our pipeline is cleaner and our reps are happier to spend time selling.”</p>
-        <div class="author">– Priya M., VP of Sales Operations</div>
+        <a href="#" class="btn btn-outline">Request Demo</a>
       </div>
     </div>
   </section>
 
-  <section id="demo">
-    <h2 style="text-align:center; margin-bottom:2rem;">Demo Video</h2>
-    <div style="display:flex; justify-content:center;">
-      <iframe src="https://www.youtube.com/embed/VIDEO_ID" allowfullscreen></iframe>
+  <section id="demo" class="section">
+    <h2>Live Demo</h2>
+    <p>Watch how easily CloserIQ Copilot transforms raw data into ready-to-close insights:</p>
+    <div class="video-wrapper">
+      <!-- Embed your demo video here -->
+      <iframe src="https://www.youtube.com/embed/your-demo-video" frameborder="0" allowfullscreen></iframe>
     </div>
   </section>
 
-  <footer>
-    <div class="container">
-      <p>© 2025 CloserIQ. All rights reserved.</p>
-      <p><a href="/terms">Terms of Service</a> • <a href="/privacy">Privacy Policy</a> • <a href="/support">Support</a></p>
-    </div>
+  <footer class="footer">
+    <p>© 2025 CloserIQ Copilot — Your AI Edge For Presale Success</p>
+    <p><a href="https://henrysailab.github.io/closeriq">henrysailab.github.io/closeriq</a></p>
   </footer>
 </body>
 </html>
